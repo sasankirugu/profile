@@ -106,9 +106,10 @@
   }
   .brand{
     font-family:var(--mono); font-size:21px; font-weight:700; letter-spacing:-0.01em;
-    display:flex; align-items:center;
+    display:flex; align-items:center; cursor:pointer;
   }
-  .brand-accent{color:var(--teal);}
+  .brand-accent{color:var(--teal); transition:opacity 0.15s ease;}
+  .brand:hover .brand-accent{opacity:0.75;}
 
   .topbar-right{display:flex; align-items:center; gap:18px;}
 
@@ -406,7 +407,7 @@
 
 <header class="topbar">
   <div class="wrap topbar-inner">
-    <div class="brand">Sasank<span class="brand-accent">Irugu</span></div>
+    <a class="brand" href="#top" aria-label="Back to top">Sasank<span class="brand-accent">Irugu</span></a>
     <div class="topbar-right">
       <nav class="primary-nav" id="primaryNav">
         <a href="#experience">Experience</a>
@@ -424,7 +425,7 @@
   </div>
 </header>
 
-<main>
+<main id="top">
   <section class="hero">
     <div class="wrap hero-center">
 
