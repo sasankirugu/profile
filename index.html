@@ -171,10 +171,19 @@
 
   .hero-stats{
     display:flex; gap:40px; flex-wrap:wrap; justify-content:center;
-    padding-top:28px; border-top:1px dashed var(--border); margin-bottom:22px; width:100%; max-width:640px;
+    padding-top:28px; border-top:1px dashed var(--border); margin-bottom:40px; width:100%; max-width:640px;
   }
   .hero-stat-value{font-family:var(--mono); font-size:19px; font-weight:600; color:var(--teal);}
   .hero-stat-label{font-family:var(--mono); font-size:11px; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.05em; margin-top:4px;}
+
+  .contact-row{
+    display:flex; flex-wrap:wrap; gap:18px; justify-content:center;
+    font-family:var(--mono); font-size:15px;
+  }
+  .contact-row a{color:var(--text-dim); border-bottom:1px solid transparent; transition:color 0.15s, border-color 0.15s;}
+  .contact-row a:hover{color:var(--teal); border-color:var(--teal);}
+  .hero-contacts{margin-bottom:36px;}
+
 
   .scroll-cue{
     display:inline-flex; color:var(--text-faint); animation:bob 2s ease-in-out infinite;
@@ -395,7 +404,7 @@
       <p class="hero-eyebrow">Hello, I am</p>
       <h1 class="hero-name">Sasank Irugu</h1>
       <p class="hero-role">Lead DevOps Engineer &amp; Platform Enthusiast</p>
-      <p class="hero-tagline">10+ years running infrastructure that isn't allowed to go down: automating deployments, migrating workloads to Kubernetes, and building the monitoring stack that tells you before your customers do.</p>
+      <p class="hero-tagline">I build and run cloud infrastructure that stays up. Kubernetes, CI/CD, and observability at scale — for 10+ years.</p>
 
       <div class="hero-actions">
         <a href="#contact" class="btn btn-primary">Get In Touch</a>
@@ -706,8 +715,7 @@
   var htmlEl = document.documentElement;
   var themeToggle = document.getElementById('themeToggle');
 
-  var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-  var currentTheme = prefersLight ? 'light' : 'dark';
+  var currentTheme = 'dark';
   htmlEl.setAttribute('data-theme', currentTheme);
 
   themeToggle.addEventListener('click', function(){
